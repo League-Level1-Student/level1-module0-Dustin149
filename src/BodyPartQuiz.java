@@ -3,6 +3,7 @@
  *    Level 1
  */
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -31,24 +32,37 @@ public class BodyPartQuiz {
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
-
+		int Score = 0;
+		int CurrentImgNum = 0;
+		String[] Answers = {"Arnold","Leonardo","Morgan","Jack"};
+		
 		// 2. Set the size of the window in the initializeGui() method below
-			
+		initializeGui();
 		// 4. Ask the user who this person is and store their answer
-		String guess= JOptionPane.showInputDialog("who is this?");
-
-		// 5. Check their answer. If they guessed correctly:
-		// -- Tell them they are right and increase the score by 1
-
-		// 6. Otherwise:
-		// -- Tell them they are wrong and who the person is
-
-		// 7. Use the showNextImage() method below to get the next image
-		showNextImage();
-	    	// 8. Show them their current score
-
-		// 9. .... repeat for all your images.....
-
+		for (int i=0;i<Array.getLength(Answers);i++) {
+			String Answer = Answers[CurrentImgNum];
+			System.out.println("The answer is ["+Answer+"]");
+			String Guess = JOptionPane.showInputDialog("Who is this? (Answer ONLY their first name)");
+			// 5. Check their answer. If they guessed correctly:
+			if (Guess.equalsIgnoreCase(Answer)) {
+			// -- Tell them they are right and increase the score by 1
+				Score = Score + 1;
+				JOptionPane.showMessageDialog(null, "Correct!");
+			// 6. Otherwise:
+			} else {
+			// -- Tell them they are wrong and who the person is
+				JOptionPane.showMessageDialog(null, "Incorrect! The answer is "+Answer);
+			}
+			// 7. Use the showNextImage() method below to get the next image
+			if (i != Array.getLength(Answers)) {
+				showNextImage();
+			}
+			CurrentImgNum = CurrentImgNum + 1;
+		    	// 8. Show them their current score
+			JOptionPane.showMessageDialog(null, "Your score is ["+Score+"]");
+			// 9. .... repeat for all your images.....
+		}
+		JOptionPane.showMessageDialog(null, "You scored a total of "+Score+" points!");
 
 	}
 
