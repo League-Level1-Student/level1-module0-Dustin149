@@ -23,38 +23,38 @@ public class DrumKit implements MouseListener {
     JLabel drumLabelWithImage;
 
     public static void main(String[] args) throws Exception {
-   	 new DrumKit().getGoing();
+   	 	new DrumKit().getGoing();
     }
 
     private void getGoing() throws MalformedURLException {
-   	 // 1. Make a JFrame variable and initialize it using "new JFrame()"
-   	 JFrame Frame = new JFrame();
-   	 // 2. Make the frame visible and 
-    //     set its default close operation to JFrame.EXIT_ON_CLOSE
-   	Frame.setVisible(true);
-   	Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-   	 // 3. Set the size of the frame
-   	Frame.setSize(1000, 1000);
-   	 // 4. Set the title of the frame
-   	Frame.setTitle("Drum Kit");
-   	 // 5. Make a JPanel variable and initialize it using "new JPanel().
-   	 JPanel Panel = new JPanel(); 
-   	 // 6. Add the panel to the frame. (The panel is invisible.)
-     Frame.add(Panel);
-   	 // 7. Download an image of a drum from the Internet. Drop it into your Eclipse project under "default package".
-   	 // 8. Put the name of your image in a String variable.
-     String ImageName = "/Level1-Module0/src/Drum.png";
-   	 // 9. Edit the next line to use your String variable
-     drumLabelWithImage = createLabelImage(ImageName);
-   	 // 10. Add the image to the panel
-     Panel.add(drumLabelWithImage);
-   	 // 11. Set the layout of the panel to "new GridLayout()"
-     	Panel.setLayout(new GridLayout());
-      	 // 12. call the pack() method on the frame.  Run your program. Do you see your drum image?
-   	  	Frame.pack();
-   	 // 13. add this mouse listener to drumLabelWithImage
-    	drumLabelWithImage.addMouseListener(mouseClicked());
-     	 // 18. Add more images to make a drumkit. Remember to add this mouse listener to each one.
+	   	 // 1. Make a JFrame variable and initialize it using "new JFrame()"
+	   	 JFrame Frame = new JFrame();
+	   	 // 2. Make the frame visible and 
+	    //     set its default close operation to JFrame.EXIT_ON_CLOSE
+	   	Frame.setVisible(true);
+	   	Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	   	 // 3. Set the size of the frame
+	   	Frame.setSize(1000, 1000);
+	   	 // 4. Set the title of the frame
+	   	Frame.setTitle("Drum Kit");
+	   	 // 5. Make a JPanel variable and initialize it using "new JPanel().
+	   	 JPanel Panel = new JPanel(); 
+	   	 // 6. Add the panel to the frame. (The panel is invisible.)
+	     Frame.add(Panel);
+	   	 // 7. Download an image of a drum from the Internet. Drop it into your Eclipse project under "default package".
+	   	 // 8. Put the name of your image in a String variable.
+	     String ImageName = "https://cdn3.vectorstock.com/i/1000x1000/54/37/snare-drum-flat-icon-music-and-instrument-vector-18445437.jpg";
+	   	 // 9. Edit the next line to use your String variable
+	     drumLabelWithImage = createLabelImage(ImageName);
+	   	 // 10. Add the image to the panel
+	     Panel.add(drumLabelWithImage);
+	   	 // 11. Set the layout of the panel to "new GridLayout()"
+	     	Panel.setLayout(new GridLayout());
+	      	 // 12. call the pack() method on the frame.  Run your program. Do you see your drum image?
+	   	  	Frame.pack();
+	   	 // 13. add this mouse listener to drumLabelWithImage
+	    	drumLabelWithImage.addMouseListener(this);
+	     	 // 18. Add more images to make a drumkit. Remember to add this mouse listener to each one.
 
     }
 
@@ -65,10 +65,10 @@ public class DrumKit implements MouseListener {
    	 
    	 // 15. Download a drum sound and drop it into your "default package". You can find it on freesound.org. To download it, log in as leagueofamazing/code4life.
    	 // 16. If they clicked on the drumImage...
-
+   	 if (drumClicked == drumLabelWithImage) {
    		 // 17. ...use the playSound method to play a drum sound. Test to see if it works
-
- 
+   	 	playSound("drum.wav");
+   	 }
     }
 
     private JLabel createLabelImage(String fileName)
