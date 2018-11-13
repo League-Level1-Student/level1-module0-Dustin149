@@ -13,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class MyFirstSwingGUI {
+	
+	
 	public static void main(String[] args) {
 		//1. Create and initialize an object of the JFrame class
 		JFrame Frame = new JFrame();

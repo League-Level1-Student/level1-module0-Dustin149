@@ -43,7 +43,7 @@ public class DrumKit implements MouseListener {
 	     Frame.add(Panel);
 	   	 // 7. Download an image of a drum from the Internet. Drop it into your Eclipse project under "default package".
 	   	 // 8. Put the name of your image in a String variable.
-	     String ImageName = "/Level1-Module0/src/Drum.png";
+	     String ImageName = "/Level1-Module0/src/Drum Icon.png";
 	   	 // 9. Edit the next line to use your String variable
 	     drumLabelWithImage = createLabelImage(ImageName);
 	   	 // 10. Add the image to the panel
